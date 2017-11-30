@@ -93,7 +93,6 @@ class BinaryTree():
 			self.printNodesInLevel(currentNode, i + 1, LEFT)
 			print()
 
-	# Added 27.11.2017
 	def zigzagOrderPrint(self, currentNode):
 		# Start from left to right, then alternate
 		direction = LEFT
@@ -131,7 +130,7 @@ class BinaryTree():
 			print(str(currentNode.root))
 			self.display(currentNode.left, level + 1)
 			
-	# AVL Trees: Balanced trees. The height difference between left and right
+	# AVL Trees are balanced trees where the height difference between left and right
 	# subtrees does not exceeds 1
 		
 	# Rotates the tree to left to make it balanced
@@ -180,7 +179,7 @@ class BinaryTree():
 			
 			return newNode
 			
-	# Rebalances the given subtrees   (56 lines comment)
+	# Rebalances the given subtrees
 	#***************************************************
 	# (1) Rebalance the right subtree. Compares the left and right subtree heights
 	# If they differ more than 1:
@@ -371,16 +370,6 @@ class BinaryTree():
 			
 ##########################
 # End of binary tree class       
-	
-def test():
-	rootValue = input("Enter a number which will become the root: ")
-	tree = BinaryTree(rootValue)
-	
-	tree.createAVLTree()
-	
-	#tree.create()
-	#tree.display(tree.getRootNode(), 1)
-	tree.breadthFirstPrint(tree.getRootNode())
 
 def run():
 	# First creates an initial (fake) node. 
@@ -398,9 +387,6 @@ def run():
 
 		# Creates a random list of nodes from a sufficient range of numbers
 		nodeList = random.sample(range(1, nodeNum * 2), nodeNum)
-
-		#for i in nodeList:
-			#	print(i)
 
 		# Creates a binary tree from the random nodes. 
 		tree.randomAVLTree(nodeList)
